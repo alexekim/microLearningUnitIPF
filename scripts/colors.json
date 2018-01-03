@@ -1,0 +1,97 @@
+var colorsConfig = {
+  colors: {
+    blue: '#5eacc0',
+    teal: '#69d0cf',
+    darkRed: '#b24236',
+    red: '#e84c3d',
+    darkPurple: '#7e4760',
+    purple: '#907381',
+
+    yourOwnColor: '#677856'
+  },
+  elements: {
+    bannerColor: 'red',
+    bannerImage: '', //to not to apply this color setting just leave it empty
+    //bannerOpacity: 0.6, // or comment it out
+
+    titleText: 'white',
+    introText: 'blue',
+    directionText: '#000', //you can also use hex, rgb or rgba colors here
+
+    footer: 'blue',
+    copyrightText: 'darkPurple',
+
+    backgroundColor: 'white',
+    backgroundImage: '',
+    backgroundOpacity: 1,
+
+    flashcards: {
+      flipIcon: 'green',
+      frontTextBoxColor: '#fafafa',
+      frontTextBoxOpacity: 0.5,
+      backTextBoxColor: 'purple',
+      backTextBoxOpacity: '0.3'
+    },
+
+    horizontalCnL: {
+      outlineColor: 'red',
+      outlineThickness: 10
+    },
+
+    customCnL: {
+      // to not override particular colors in content.json you should set size for items there
+      // (I don't know why it was done like that)
+      hotspotInside: 'teal',
+      hotspotOutline: 'blue',
+      circularItemImageColor: 'yourOwnColor',
+      closeButtonColor: 'darkPurple',
+      closeButtonBackgroundColor: '#fff',
+      closeButtonBorderColor: 'darkPurple',
+      itemContentColor: 'rgba(210, 210, 210, 0.9)' //rgba used because opacity will affect text color too
+    },
+
+    selectAndReflect: {
+      lineBackground: 'linear-gradient(to right, rgba(255, 0, 0, 0) 0%, green 50%, rgba(255, 0, 0, 0) 100%)',
+      heading: 'blue',
+      titleText: 'green',
+      titleBox: 'blue',
+      modalBorder: 'purple',
+      textBoxOutline: 'magenta',
+      selectedBackground: 'black',
+      closeButtonColor: 'darkblue',
+      closeButtonBackgroundColor: '#fafafa',
+      closeButtonBorderColor: 'black'
+    },
+
+    article: {
+      carouselDots: 'green',
+      carouselCaptions: 'orange',
+      topBoxColor: 'blue',
+      topBoxTextColor: 'black',
+      bottomBoxColor: 'darkPurple',
+      bottomTextColor: 'white'
+    },
+
+    accordion: {
+      itemText: 'white',
+      itemBorder: 'blue',
+      itemBackground: 'red'
+    },
+
+    videopage: {
+      imageBorderColor: 'magenta',
+      imageBorderThickness: 4
+    },
+
+    customCnLwP: {
+      selectedHotspotColor: 'green',
+      selectedHotspotOpacity: 0.7,
+      unselectedHotspotColor: 'black',
+      unselectedHotspotOpacity: 0.5,
+      closeButtonColor: 'darkPurple',
+      closeButtonBackgroundColor: '#fff',
+      closeButtonBorderColor: 'darkPurple',
+      itemContentColor: 'rgba(210, 210, 210, 0.9)' //rgba used because opacity will affect text color too
+    }
+  }
+};

@@ -1,0 +1,40 @@
+var contentConfig = {
+//   backgroundColor: '#FFFFFF',
+//   backgroundImage: '',
+//   backgroundOpacity: 1,
+
+  items: [
+    {
+      "title": "",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+      "button": "",
+      "button_class": "off",
+      "link": "",
+      "image": "img/Mediabakery_BLD0011304.jpg"
+    },
+    {
+      "title": "<strong>Plan for Healthy Eating</strong>",
+      "content": "<ul><li>A key part of managing blood sugar is a plan for healthy eating. Planning what and when you eat helps keep your blood sugar in your target range. It also helps you manage your weight and lose weight if needed.</li><li>A registered dietitian can teach you the skills you need to plan healthy meals.</li></ul>",
+      "button": "",
+      "button_class": "off",
+      "link": "",
+      "image": "img/Mediabakery_BLD0047729.jpg",
+    },
+    {
+      "title": "<strong>Get Moving</strong>",
+      "content": "<ul><li>Being physically active every day can help you manage your blood sugar. That’s because an active lifestyle can improve your body’s ability to use insulin.</li><li>Activity can help you lose weight.</li><li>It can also help delay or prevent complications of diabetes.</li></ul>",
+      "button": "",
+      "button_class": "off",
+      "link": "",
+      "image": "img/Mediabakery_MTO0011395.jpg",
+    },
+    {
+      "title": "<strong>Take Your Meds</strong>",
+      "content": "<ul><li>Taking medicine can help you manage your diabetes. Diabetes medicines improve your ability to keep your blood sugar in your target range. These medicines are powerful tools that can keep you healthier by delaying or preventing complications.</li><li>Many people take one or more medicines to help manage their blood sugar.</li></ul>",
+      "button": "",
+      "button_class": "off",
+      "link": "",
+      "image": "img/Mediabakery_STB0185141.jpg",
+    }
+  ]
+};
