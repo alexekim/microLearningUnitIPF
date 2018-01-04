@@ -1,0 +1,35 @@
+var footerConfig = {
+  buttons: [
+    {
+      enabled: true,
+      text: 'SAVE'
+    },
+    {
+      enabled: false,
+      subject: '<insert subject>',
+      body: '<insert body> + <go to <hyperlink/insert URL> powered by The Staywell Company.',
+      text: 'SHARE'
+    },
+    {
+      enabled: true,
+      type: 'like',
+      text: 'Feedback'
+    }
+  ],
+
+  banner: {
+    enabled: false,
+    text: ' © 2017 The StayWell Company, LLC. All rights reserved. ',
+    textAlign: 'center',
+    logo1: {
+      image: 'img/IWSW-logo1.png',
+      position: 'left',
+      height: 28
+    },
+    logo2: {
+      image: 'img/Krames-Health-Engagement-Pt-RGB.png',
+      position: 'right',
+      height: 28
+    }
+  }
+};

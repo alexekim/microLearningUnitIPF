@@ -1,0 +1,20 @@
+// version: 9
+var headerConfig = {
+  trackingSettings: {
+    urlcode: '57c8959e700fc',
+    apiurl: 'http://mlucenter.com/like/api'
+  },
+
+  pdf: 'files/Click-n-learn-Understanding-your-diabetes-management-plan.pdf',
+  banner: {
+    enabled: true,
+    text: 'Understanding Your Diabetes Management Plan',
+    sticky: true
+  },
+  introText: {
+    text: 'It’s great that you already have a general understanding of how to manage your diabetes.'
+  },
+  directionText: {
+    text: 'Use the arrows to move through the images and discover the benefits of exercising regularly.'
+  }
+};
