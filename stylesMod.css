@@ -1,49 +1,49 @@
 @font-face {
-  font-family: 'HelveticaNeueLTStd-Lt';
-  src: url('../fonts/HelveticaNeueLTStd-Lt.eot');
+  font-family: 'Lato', sans-serif;
+  /*src: url('../fonts/HelveticaNeueLTStd-Lt.eot');
   src: url('../fonts/HelveticaNeueLTStd-Lt.eot?#iefix') format('embedded-opentype'),
   url('../fonts/HelveticaNeueLTStd-Lt.woff') format('woff'),
-  url('../fonts/HelveticaNeueLTStd-Lt.ttf') format('truetype');
+  url('../fonts/HelveticaNeueLTStd-Lt.ttf') format('truetype');*/
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeueLTStd-Md';
-  src: url('../fonts/HelveticaNeueLTStd-Md.eot');
+  font-family: 'Lato', sans-serif;
+  /*src: url('../fonts/HelveticaNeueLTStd-Md.eot');
   src: url('../fonts/HelveticaNeueLTStd-Md.eot?#iefix') format('embedded-opentype'),
   url('../fonts/HelveticaNeueLTStd-Md.woff') format('woff'),
-  url('../fonts/HelveticaNeueLTStd-Md.ttf') format('truetype');
+  url('../fonts/HelveticaNeueLTStd-Md.ttf') format('truetype');*/
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'MinionPro-Regular';
-  src: url('../fonts/MinionPro-Regular.eot');
+  font-family: 'Lato', sans-serif;
+  /*src: url('../fonts/MinionPro-Regular.eot');
   src: url('../fonts/MinionPro-Regular.eot?#iefix') format('embedded-opentype'),
   url('../fonts/MinionPro-Regular.woff') format('woff'),
-  url('../fonts/MinionPro-Regular.ttf') format('truetype');
+  url('../fonts/MinionPro-Regular.ttf') format('truetype');*/
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeueLTStd-Roman';
-  src: url('../fonts/HelveticaNeueLTStd-Roman.eot');
+  font-family: 'Lato', sans-serif;
+  /*src: url('../fonts/HelveticaNeueLTStd-Roman.eot');
   src: url('../fonts/HelveticaNeueLTStd-Roman.eot?#iefix') format('embedded-opentype'),
   url('../fonts/HelveticaNeueLTStd-Roman.woff') format('woff'),
   url('../fonts/HelveticaNeueLTStd-Roman.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: normal;*/
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeueLTStd-Bd';
-  src: url('../fonts/HelveticaNeueLTStd-Bd.eot');
+  font-family: 'Lato', sans-serif;
+  /*src: url('../fonts/HelveticaNeueLTStd-Bd.eot');
   src: url('../fonts/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'),
   url('../fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
-  url('../fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype');
+  url('../fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype');*/
   font-weight: normal;
   font-style: normal;
 }
@@ -63,7 +63,7 @@
   background-position: center; }
 
 section.flashcards-section .header-banner {
-  font-family: "HelveticaNeueLTStd-Lt";
+  font-family: "Lato", sans-serif;
   text-align: center;
   color: #fff;
   background-color: #e84c3d;
@@ -127,7 +127,7 @@ section.flashcards-section > .content {
     section.flashcards-section > .content .text-part {
       padding: 0; } }
   section.flashcards-section > .content .intro-text {
-    font-family: 'HelveticaNeueLTStd-Roman';
+    font-family: 'Lato', sans-serif;;
     font-size: 24px;
     text-align: center;
     margin-bottom: 0;
@@ -142,7 +142,7 @@ section.flashcards-section > .content {
     section.flashcards-section > .content .intro-text {
       padding: 0; } }
   section.flashcards-section > .content .direction-text {
-    font-family: 'HelveticaNeueLTStd-Md';
+    font-family: 'Lato', sans-serif;;
     font-size: 18px;
     text-align: center;
     color: #e84c3d;
@@ -256,7 +256,7 @@ section.flashcards-section > .content {
           display: table-cell;
           vertical-align: middle;
           text-align: center;
-          font-family: 'HelveticaNeueLTStd-Md';
+          font-family: 'Lato', sans-serif;;
           font-size: 22pt;
           color: #fff;
           padding: 0.5em;
@@ -295,7 +295,7 @@ section.flashcards-section > .content {
       section.flashcards-section > .content #flashcards-list .flashcard .card-side.text-only {
         position: relative;
         padding: 47px 0 0 0;
-        font-family: 'HelveticaNeueLTStd-Roman';
+        font-family: 'Lato', sans-serif;
         color: #414142; }
         section.flashcards-section > .content #flashcards-list .flashcard .card-side.text-only:before {
           content: '';
@@ -348,7 +348,7 @@ section.flashcards-section > .content {
         float: right; }
 
 section.flashcards-section .footer {
-  font-family: "HelveticaNeueLTStd-Roman";
+  font-family: "Lato", sans-serif;;
   height: 48px;
   padding: 0 15px;
   font-size: 11px;
