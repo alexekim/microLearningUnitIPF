@@ -1,49 +1,63 @@
 <link rel="stylesheet" href="/css/idiopathic-pulmonary-fibrosis/bootstrap-min.css">
-<link rel="stylesheet" href="/css/idiopathic-pulmonary-fibrosis/styles.css">
-<link rel="stylesheet" href="/css/idiopathic-pulmonary-fibrosis/activity.css">
+<!--<link rel="stylesheet" href="/css/idiopathic-pulmonary-fibrosis/styles.css">-->
+<!--<link rel="stylesheet" href="/css/idiopathic-pulmonary-fibrosis/activity.css">-->
+<link rel="stylesheet" href="http://www.lung.org/dev/lung-health-and-diseases/lung-disease-lookup/idiopathic-pulmonary-fibrosis/mlcstyles/stylesMod.css">
+<link rel="stylesheet" href="http://www.lung.org/dev/lung-health-and-diseases/lung-disease-lookup/idiopathic-pulmonary-fibrosis/mlcstyles/activitymod.css">
+<!--<div id="item-848355657" class="templateComponent" style="display: inline;"></div>-->
+
 
 <div class="page-background"></div>
 <section class="flashcards-section">
-    <div class="header-banner">
-        <div class="banner-text">
-            <!-- json/header.json .banner.text -->
-        </div>
+  <div class="header-banner">
+    <div class="banner-text">
+      <!-- json/header.json .banner.text -->
     </div>
+  </div>
 
-    <div class="content">
-        <div class="container">
-            <div class="text-part">
-                <p class="intro-text"><!-- json/header.json .introText.text --></p>
-                <p class="direction-text"><!-- json/header.json .directionText.text --></p>
-            </div>
+  <div class="content">
+    <div class="container">
+      <div class="text-part">
+        <p class="intro-text">
+          <!-- json/header.json .introText.text -->
+        </p>
+        <p class="direction-text">
+          <!-- json/header.json .directionText.text -->
+        </p>
+      </div>
 
-            <div class="main_panes">
-              <div class="nav">
-                <ul><!-- images --></ul>
-              </div>
-              <div class="panes"><!-- panes --></div>
-            </div>
-
-
-            <div class="buttons container">
-                <div class="row">
-                    <!-- footerConfig.buttons -->
-                </div>
-            </div>
+      <div class="main_panes">
+        <div class="nav">
+          <ul>
+            <!-- images -->
+          </ul>
         </div>
-    </div>
-
-    <div class="footer">
-        <div class="container">
-            <p class="footer-text"><!-- json/flashcards.json .banner.text --></p>
-            <div class="img-wrapper">
-                <div class="img-container">
-                    <!-- json/flashcards.json .banner.logo1 -->
-                    <!-- json/flashcards.json .banner.logo2 -->
-                </div>
-            </div>
+        <div class="panes">
+          <!-- panes -->
         </div>
+      </div>
+
+
+      <div class="buttons container">
+        <div class="row">
+          <!-- footerConfig.buttons -->
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p class="footer-text">
+        <!-- json/flashcards.json .banner.text -->
+      </p>
+      <div class="img-wrapper">
+        <div class="img-container">
+          <!-- json/flashcards.json .banner.logo1 -->
+          <!-- json/flashcards.json .banner.logo2 -->
+        </div>
+      </div>
+    </div>
+  </div>
 
 </section>
 
@@ -61,3 +75,11 @@
 <script src="/js/idiopathic-pulmonary-fibrosis/likebuttons-min.js"></script>
 <script src="/js/idiopathic-pulmonary-fibrosis/main-helpers.js"></script>
 <script src="/js/idiopathic-pulmonary-fibrosis/main.js"></script>
+
+<script>
+  $("body").css("background", "none");
+  $(".header-banner").css("background-color", "#ed1b2d");
+  $(".page-background").css("background-color", "transparent");
+  var x = document.getElementsByClassName("buttons");
+  x[0].parentNode.removeChild(x[0]);
+</script>
