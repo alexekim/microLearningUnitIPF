@@ -1,0 +1,444 @@
+<h1 class="internalPageTitle">${title}</h1>
+<div id="nationalContent">${body}</div>
+<div id="internal_local"></div>
+
+<h2 class="dkGray"><a name="listings"></a><span class="state_name"></span> <span class="list_name"></span></h2>
+<div id="filter">
+	<span id="lfEventZip">
+		<div id="item-801267033" class="templateComponent" style="display: inline;"></div>
+	</span>
+	<span id="lfEventState">
+		<div class="inner first">
+	<p>Select state:</p>
+	<form id="lfEvents">
+		<select name="state" id="stateSelectList" onchange="stateSelectSubmit(this.value);">
+			<option class="state_name"></option>
+			<option value="AL,alabama">Alabama</option>
+			<option value="AK,alaska">Alaska</option>
+			<option value="AZ,arizona">Arizona</option>
+			<option value="AR,arkansas">Arkansas</option>
+			<option value="CA,california">California</option>
+			<option value="CO,colorado">Colorado</option>
+			<option value="CT,connecticut">Connecticut</option>
+			<option value="DE,delaware">Delaware</option>
+			<option value="FL,florida">Florida</option>
+			<option value="GA,georgia">Georgia</option>
+			<option value="HI,hawaii">Hawaii</option>
+			<option value="ID,idaho">Idaho</option>
+			<option value="IL,illinois">Illinois</option>
+			<option value="IN,indiana">Indiana</option>
+			<option value="IA,iowa">Iowa</option>
+			<option value="KS,kansas">Kansas</option>
+			<option value="KY,kentucky">Kentucky</option>
+			<option value="LA,louisiana">Louisiana</option>
+			<option value="ME,maine">Maine</option>
+			<option value="MD,maryland">Maryland</option>
+			<option value="MA,massachusetts">Massachusetts</option>
+			<option value="MI,michigan">Michigan</option>
+			<option value="MN,minnesota">Minnesota</option>
+			<option value="MS,mississippi">Mississippi</option>
+			<option value="MO,missouri">Missouri</option>
+			<option value="MT,montana">Montana</option>
+			<option value="NE,nebraska">Nebraska</option>
+			<option value="NV,nevada">Nevada</option>
+			<option value="NH,new-hampshire">New Hampshire</option>
+			<option value="NJ,new-jersey">New Jersey</option>
+			<option value="NM,new-mexico">New Mexico</option>
+			<option value="NY,new-york">New York</option>
+			<option value="NC,north-carolina">North Carolina</option>
+			<option value="ND,north-dakota">North Dakota</option>
+			<option value="OH,ohio">Ohio</option>
+			<option value="OK,oklahoma">Oklahoma</option>
+			<option value="OR,oregon">Oregon</option>
+			<option value="PA,pennsylvania">Pennsylvania</option>
+			<option value="RI,rhode-island">Rhode Island</option>
+			<option value="SC,south-carolina">South Carolina</option>
+			<option value="SD,south-dakota">South Dakota</option>
+			<option value="TN,tennessee">Tennessee</option>
+			<option value="TX,texas">Texas</option>
+			<option value="UT,utah">Utah</option>
+			<option value="VT,vermont">Vermont</option>
+			<option value="VA,virginia">Virginia</option>
+			<option value="WA,washington">Washington</option>
+			<option value="DC,district-of-columbia">Washington DC</option>
+			<option value="WV,west-virginia">West Virginia</option>
+			<option value="WI,wisconsin">Wisconsin</option>
+			<option value="WY,wyoming">Wyoming</option>
+		</select>
+	</form>
+</div>
+	</span>
+	<span id="lfEventType">
+	</span>
+</div>
+
+<ul id="local_list_xml"></ul>
+<div id="local_list_div"></div>
+
+
+<hr id="relatedContentHR">
+<div class="relatedContent">
+    <h3>Related Content</h3>
+    <ul class="bold" id="relatedContentUL">
+      <!-- events -->
+        <t:include id="templatelist-666725685"></t:include>
+      <!-- media/news -->
+        <t:include id="templatelist-666725943"></t:include>
+      <!-- blog -->
+        <t:include id="templatelist-666726990"></t:include>
+    </ul>
+    <ul class="bold relatedWeb">
+        <div style="display: inline;" class="templateComponent" id="templatelist-666235262"></div>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var related_content_array = [];
+</script>
+<t:if test="related_content.length > 0">
+  <t:list id="related_content">
+    <script type="text/javascript">
+      var relatedName = "${name}";
+      related_content_array.push("${name}");
+    </script>
+  </t:list>
+</t:if>
+<t:else>
+    <script type="text/javascript">
+        jQuery('#relatedContentHR').hide();
+        jQuery('.relatedContent').hide();
+    </script>
+</t:else>
+<script type="text/javascript" src="/js/jquery-quick-pagination-min.js"></script>
+<script type="text/javascript">
+<!--
+var is_local = "true";
+jQuery('.state_name').hide();
+function returnContent(key, fullStateName, stateAbbv) {
+    if (key == "" || key == null) {
+        alert('No location to load'+key);
+    } else {
+        var page_path = "${path}";
+        var list_node = "";
+        var filename;
+        var sublist;
+        var allEvents;
+        var events_only = "";
+        switch (page_path) {
+            case "/our-initiatives/lung-force/events/":
+                list_node = "event_item";
+                filename = "local-events-list";
+                jQuery(".list_name").text("Events");
+                allEvents = "true";
+                break;
+            case "/our-initiatives/lung-force/events/walks-runwalks.html":
+                list_node = "event_item";
+                sublist = ['runwalk','lung-force'];
+                filename = "local-events-list";
+                jQuery(".list_name").text("Walk and Run Events");
+                break;
+            case "/our-initiatives/lung-force/events/expos.html":
+                list_node = "event_item";
+                sublist = ['expo'];
+                filename = "local-events-list";
+                jQuery(".list_name").text("Expos");
+                break;
+            case "/our-initiatives/lung-force/events/education-events.html":
+                list_node = "event_item";
+                sublist = ['lung-force-educational-event'];
+                filename = "local-events-list";
+                jQuery(".list_name").text("Education Events");
+                break;
+            default:
+                console.log("Nothing matched");
+        }
+        if (list_node != ""){
+            jQuery('.state_name').show();
+            jQuery('h5 .list_name').show();
+        }
+        relatedparams = '';
+        console.log("The length of the content array is = " + related_content_array.length);
+        if (related_content_array.length > 0){
+            for (n = 0; n < related_content_array.length; ++n) {
+              relatedparams = relatedparams + '&related_content=' + related_content_array[n];
+            }
+        }
+        console.log("the params = " + relatedparams);
+        console.log('The key is ' + key);
+        var randomnumber = Math.floor(Math.random()*999999);
+
+        var lungforces = [];
+        var lungforceothers = [];
+        var galas = [];
+        var lungforceeds = [];
+        var lungforceexpos = [];
+
+        var lungforce_listing = '';
+        var lungforceother_listing = '';
+        var gala_listing = '';
+        var lungforceed_listing = '';
+        var lungforceexpo_listing = '';
+
+        $.ajax({
+            type: "GET",
+            url: "http://www.lung.org/local-content/" + fullStateName + "/" + stateAbbv + "-local-content.xml?state=" + key + "&t=" + randomnumber,
+            dataType: "xml",
+            success: function(xml){
+                var copy_html1 = "";
+                var html = $(xml).find(filename).text();
+                if ($(xml).find(filename + '-hide').text() == 'hide_national') {
+                    console.log("Hide that national stuff");
+                    jQuery('#nationalContent').hide();
+                }
+                else {
+                    jQuery('#nationalContent').show();
+                }
+                copy_html1 += html;
+                document.getElementById('internal_local').innerHTML = copy_html1;
+          },
+          error: function() {
+            console.log("An error occurred while processing XML file.");
+          }
+         });
+        $.ajax({
+            type: "GET",
+            url: "http://www.lung.org/all-items.xml?related_state=" + key + "&t=" + randomnumber,
+            dataType: "xml",
+            success: function(xml){
+                var listings_html1 = "";
+                var media_author = "";
+                var html;
+                var results = $(xml).find(list_node).map(function () {
+                    var row = {}
+                    $(this).children().each(function () {
+                        row[this.tagName] = $(this).text();
+                    });
+                    if (list_node == 'event_item') {
+                        obj = {};
+                        obj['title'] = row.title;
+                        obj['url'] = row.link;
+                        obj['city'] = row.city;
+                        obj['state'] = row.state;
+                        obj['date'] = row.date;
+			//console.log("--------row.date:------------");
+			//	console.log(row.date);
+                        obj['init_type'] = row.init_type;
+                        obj['cat'] = row.cat;
+                        if (row.city.length > 0 && row.state.length > 0){
+                            var citystate = ' | ' + row.city + ', ' + row.state;
+                        }
+                        else if (row.city.length == 0 && row.state.length > 0){
+                            var citystate = ' | ' + row.state;
+                        }
+                        else if (row.city.length > 0 && row.state.length == 0){
+                            var citystate = ' | ' + row.city;
+                        }
+                        else {
+                            var citystate = '';
+                        }
+                        obj['citystate'] = citystate;
+                        if (row.date.length > 0 ){
+                            var eventdate = ' | ' + row.date;
+                        }
+                        else {
+                            var eventdate = '';
+                        }
+                        obj['eventdate'] = eventdate;
+                        if ((events_only == "true") && (row.program_or_event == "Program")) {
+                            return;
+                        }
+                        if (allEvents == 'true') {
+                            html = '<li><a href="' + row.link + '">' + row.title + citystate + eventdate + '</a></li>';
+                        }
+                        else if (sublist.indexOf(row.cat) > -1 && row.cat.length > 0){
+                            html = '<li><a href="' + row.link + '">' + row.title + citystate + eventdate + '</a></li>';
+                        }
+                        else {return;}
+                        if(row.cat == 'lung-force') {
+                            lungforces.push(obj);
+                        } else if(row.cat == 'lung-force-other') {
+                            lungforceothers.push(obj);
+                        } else if(row.cat == 'gala') {
+                            galas.push(obj);
+                        } else if(row.cat == 'lung-force-educational-event') {
+                            lungforceeds.push(obj);
+                        } else if(row.cat == 'expo') {
+                            lungforceexpos.push(obj);
+                            console.log("==========lungforceexpos, and obj======");
+                            console.log(lungforceexpos);
+                            console.log(obj);
+                        }
+                    }
+
+                    else {return;}
+
+                    listings_html1 += html;
+                    return row;
+                }).get();
+                lungforces.sort(function(a, b) {
+                    // var textA = a.city.toUpperCase();
+                    // var textB = b.city.toUpperCase();
+                    // return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                });
+                for (var k = 0; k < lungforces.length; k++) {
+                    var html = '<li><a href="' + lungforces[k]['url'] + '" target="_blank">' + lungforces[k]['title'] + lungforces[k]['citystate'] + lungforces[k]['eventdate'] + '</a></li>';
+                    lungforce_listing += html;
+                }
+                /*lungforceothers.sort(function(a, b) {
+                    var textA = a.city.toUpperCase();
+                    var textB = b.city.toUpperCase();
+                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                });*/
+                for (var k = 0; k < lungforceothers.length; k++) {
+                    var html = '<li><a href="' + lungforceothers[k]['url'] + '" target="_blank">' + lungforceothers[k]['title'] + lungforceothers[k]['citystate'] + lungforceothers[k]['eventdate'] + '</a></li>';
+                    lungforceother_listing += html;
+                }
+                /*galas.sort(function(a, b) {
+                    var textA = a.city.toUpperCase();
+                    var textB = b.city.toUpperCase();
+                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                });*/
+                for (var k = 0; k < galas.length; k++) {
+                    var html = '<li><a href="' + galas[k]['url'] + '" target="_blank">' + galas[k]['title'] + galas[k]['citystate'] + galas[k]['eventdate'] + '</a></li>';
+                    gala_listing += html;
+                }
+                /*lungforceeds.sort(function(a, b) {
+                    var textA = a.city.toUpperCase();
+                    var textB = b.city.toUpperCase();
+                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                });*/
+                for (var k = 0; k < lungforceeds.length; k++) {
+                    var html = '<li><a href="' + lungforceeds[k]['url'] + '" target="_blank">' + lungforceeds[k]['title'] + lungforceeds[k]['citystate'] + lungforceeds[k]['eventdate'] + '</a></li>';
+                    lungforceed_listing += html;
+                }
+                /*lungforceexpos.sort(function(a, b) {
+                    var textA = a.city.toUpperCase();
+                    var textB = b.city.toUpperCase();
+                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                });*/
+                for (var k = 0; k < lungforceexpos.length; k++) {
+                    var html = '<li><a href="' + lungforceexpos[k]['url'] + '" target="_blank">' + lungforceexpos[k]['title'] + lungforceexpos[k]['citystate'] + lungforceexpos[k]['eventdate'] + '</a></li>';
+                    lungforceexpo_listing += html;
+                }
+
+                var separate_listings = "";
+                var select_options = "";
+                if (lungforce_listing != '') {
+                    separate_listings += '<div id="lungforce" class="event_list"><h4>LUNG FORCE Walks, Run/Walks</h4><ul id="lungforce_list_xml">' + lungforce_listing + '</ul></div>';
+                    select_options += '<option value="lungforce">Walks, Run/Walks</option>';
+                }
+                if (lungforceexpo_listing != '') {
+                    separate_listings += '<div id="lungforceexpo" class="event_list"><h4>LUNG FORCE Expos</h4><ul id="lungforceexpo_list_xml">' + lungforceexpo_listing + '</ul></div>';
+                    select_options += '<option value="lungforceexpo">Expos</option>';
+                }
+                if (lungforceed_listing != '') {
+                    separate_listings += '<div id="lungforceed" class="event_list"><h4>Educational Events</h4><ul id="lungforceed_listing_xml">' + lungforceed_listing + '</ul></div>';
+                    select_options += '<option value="lungforceed">Educational Events</option>';
+                }
+                if (gala_listing != '') {
+                    separate_listings += '<div id="gala" class="event_list"><h4>Galas</h4><ul id="gala_list_xml">' + gala_listing + '</ul></div>';
+                    select_options += '<option value="gala">Galas</option>';
+                }
+                if (lungforceother_listing != '') {
+                    separate_listings += '<div id="lungforceother" class="event_list"><h4>Other</h4><ul id="lungforceother_list_xml">' + lungforceother_listing + '</ul></div>';
+                    select_options += '<option value="lungforceother">Other</option>';
+                }
+
+                // var lin = $("#local_list_xml li").length;
+                // console.log("there are " + lin + " number of items");
+                if (separate_listings == ""){
+                    jQuery('.state_name').hide();
+                    jQuery('h5 .list_name').hide();
+                } else {
+                    document.getElementById('lfEventType').innerHTML = separate_listings;
+                    jQuery("#lfEventType").prepend('<div class="inner"><p>Select event type:</p><select id="event_select"><option value="all">All Events</option>' + select_options + '</select></div>');
+                    jQuery("#event_select").change(function() {
+                        var event_select_value = jQuery(this).val();
+                        if (event_select_value == "all") {
+                          jQuery(".event_list").css("display","block");
+                        } else {
+                          jQuery(".event_list").css("display","none");
+                          jQuery("#" + event_select_value).css("display","block");
+                        }
+                    });
+                    //$("#local_list_xml").quickPagination();
+                }
+          },
+          error: function() {
+            console.log("An error occurred while processing XML file.");
+          }
+         });
+        $.ajax({
+            type: "GET",
+            url: "http://www.lung.org/related-content.xml?related_state=US&related_state=" + key + relatedparams + "&t=" + randomnumber,
+            dataType: "xml",
+            success: function(xml){
+                var listing_event = "";
+                var listing_media = "";
+                var listing_blog = "";
+                var related_html = "";
+                $(xml).find('event_item').each(function(i){
+                    var city = $(this).find('city').text();
+                    var state = $(this).find('state').text();
+                    var date = $(this).find('date').text();
+                    if ((city != "") && (state != "")){
+                        var citystate = ' | ' + city + ', ' + state;
+                    } else if ((city == "") && (state != "")){
+                        var citystate = ' | ' + state;
+                    } else if ((city != "") && (state == "")){
+                        var citystate = ' | ' + city;
+                    } else {
+                        var citystate = '';
+                    }
+                    if (date != ""){
+                        var eventdate = ' | ' + date;
+                    } else {
+                        var eventdate = '';
+                    }
+                    var title = $(this).find('title').text();
+                    var url = $(this).find('link').text();
+                    var html = '<li><a href="' + url + '">' + title + citystate + eventdate + '</a></li>';
+                    listing_event += html;
+                    return;
+                });
+                $(xml).find('media_item').each(function(i){
+                      var title = $(this).find('title').text();
+                      var url = $(this).find('link').text();
+                      var html = '<li><a href="' + url + '">' + title + '</a>';
+                      listing_media += html;
+                      return;
+                });
+                $(xml).find('blog_item').each(function(i){
+                      var title = $(this).find('title').text();
+                      var url = $(this).find('link').text();
+                      var html = '<li><a href="' + url + '">' + title + '</a>';
+                      listing_blog += html;
+                      return;
+                });
+
+                related_html = listing_event + listing_media + listing_blog;
+                document.getElementById('relatedContentUL').innerHTML = related_html;
+          },
+          error: function() {
+            console.log("An error occurred while processing XML file.");
+          }
+         });
+    }
+}
+-->
+</script>
+<style>
+ul.simplePagerNav li {
+    display: block;
+    float: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+ul.simplePagerNav li.currentPage a {
+    color: #555559;
+}
+.internalPage ul.simplePagerNav > li:before {
+    content: '';
+}
+</style>
